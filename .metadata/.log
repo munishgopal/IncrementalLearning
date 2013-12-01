@@ -1,0 +1,55 @@
+!SESSION 2013-01-03 04:11:10.704 -----------------------------------------------
+eclipse.buildId=M20110210-1200
+java.version=1.6.0_37
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product org.eclipse.epp.package.java.product
+
+!ENTRY com.perforce.team.core 1 0 2013-01-03 04:13:03.228
+!MESSAGE P4Java server factory loaded; version: 2010.1/275861; date: 2010/12/07
+
+!ENTRY com.perforce.team.core 1 0 2013-01-03 04:13:03.400
+!MESSAGE Using default charset: windows-1252; JVM charset: windows-1252
+
+!ENTRY com.perforce.team.core 1 0 2013-01-03 04:13:03.412
+!MESSAGE initializing system file command helper class: java.io.File
+
+!ENTRY com.perforce.team.core 1 0 2013-01-03 04:13:03.460
+!MESSAGE Using default RPC system file command helper: com.perforce.p4java.impl.mapbased.rpc.sys.helper.RpcSystemFileCommandsHelper
+
+!ENTRY com.perforce.team.core 1 0 2013-01-03 04:13:03.463
+!MESSAGE setting RPC system file helper to class com.perforce.team.core.p4java.P4JavaSysFileCommandsHelper
+
+!ENTRY amazon.devtools.brazil.eclipse.BrazilEclipsePlugin 2 -1 2013-01-03 04:13:16.534
+!MESSAGE No existing workspace found
+
+!ENTRY amazon.ht2.trails.eclipse.plugin.HappyTrailsEclipsePlugin 1 -1 2013-01-03 04:13:25.473
+!MESSAGE HappyTrails plugin initialized
+
+!ENTRY amazon.devtools.brazil.eclipse.BrazilEclipsePlugin 4 0 2013-01-03 04:13:38.697
+!MESSAGE Error prefetching package names
+!STACK 0
+java.lang.RuntimeException: Error prefetching package names
+	at amazon.devtools.brazil.eclipse.wizards.NewBrazilJavaProjectFirstPage.updatePackageSet(NewBrazilJavaProjectFirstPage.java:551)
+	at amazon.devtools.brazil.eclipse.jobs.GetPackageNamesJob.run(GetPackageNamesJob.java:24)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: amazon.tinybmds.BMDSClientException: Unable to query BMDS!
+	at amazon.tinybmds.BMDSClient.callBMDSMethod(BMDSClient.java:1336)
+	at amazon.tinybmds.BMDSClient.callBMDSMethod(BMDSClient.java:1290)
+	at amazon.tinybmds.BMDSClient.getPackageNames(BMDSClient.java:402)
+	at amazon.devtools.brazil.bmds.BMDS.getPackageNames(BMDS.java:28)
+	at amazon.devtools.brazil.eclipse.wizards.NewBrazilJavaProjectFirstPage.updatePackageSet(NewBrazilJavaProjectFirstPage.java:548)
+	... 2 more
+Caused by: amazon.resting.RESTException: Error while invoking remote method (tried 3 times):http://brazil-metadata.amazon.com:80/BMDS?method=getPackageNames&prefix=
+Status Code: 1001
+Status Description: Unable to complete the HTTP call due to a communication error with the remote server. brazil-metadata.amazon.com
+	at amazon.resting.RESTUtils.invokeCall(RESTUtils.java:311)
+	at amazon.resting.RESTUtils.getResourceByMethodAndParameters(RESTUtils.java:92)
+	at amazon.resting.RESTUtils.getResource(RESTUtils.java:69)
+	at amazon.tinybmds.BMDSClient.getResource(BMDSClient.java:1356)
+	at amazon.tinybmds.BMDSClient.callBMDSMethod(BMDSClient.java:1329)
+	... 6 more
+
+!ENTRY org.eclipse.ui 4 4 2013-01-03 04:16:32.466
+!MESSAGE Invalid preference page path: Logging
